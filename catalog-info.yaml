@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: roasted-mosquito-python-gitops
+  description: This is GitOps manifest for roasted-mosquito-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: roasted-mosquito-python
+    janus-idp.io/tekton: roasted-mosquito-python 
+    backstage.io/kubernetes-id: roasted-mosquito-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:roasted-mosquito-python
